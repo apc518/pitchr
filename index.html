@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pitchr</title>
+        <link rel="stylesheet" href="styles.css"/>
+        <script src="lib/howler.min.js"></script>
+        <script src="lib/sweetalert2.min.js"></script>
+        <script src="src/Sound.js" defer></script>
+    </head>
+    <body>
+        <div id="main" style="display: flex;">
+            <div id="appDrawer">
+                <div id="patchSettings">
+                    <details id="audioSettingsDetails" class="settingsSection" open>
+                        <summary class="settingsSummary">Audio</summary>
+                        
+                        <div id="audioSampleSettings" class="settingsCategory">
+                            <select id="audioSampleDropdown"  class="mayDisplayFilename"></select> <label for="pitchModeDropdown" class="secondaryLabels">Waveform</label>
+                        </div>
+
+                        <div id="volumeSliderContainer">
+                            <label for="globalVolumeSlider" id="volumeSliderLabel">Volume</label>
+                            <input type="range" min="0" max="100" id="globalVolumeSlider" class="slider"/> <br/>
+                        </div>
+                    </details>
+                </div>
+                <div id="sessionContainer">
+                    <div class="session-card">Default</div>
+                    <div class="session-card">Speedrunning</div>
+                    <div class="session-card">Perfect Pitch</div>
+                </div>
+            </div>
+            <div id="centralDiv">
+                <div class="playback-control-bar">
+                    <button id="playpausebtn">Play (space)</button><button id="nextButton">Next (right arrow)</button>
+                </div>
+                <div>
+                    <label for="answerInput" class="secondaryLabels">Answer:</label>
+                    <input type="text" id="answerInput" />
+                    <button id="submitAnswerButton">Submit (enter)</button>
+                </div>
+                <div>
+                    <button id="scrambleButton">Clear My Relative Pitch</button>
+                </div>
+                <div>
+                    <input type="checkbox" id="autoplayCheckbox">Automatically play next</input>
+                </div>
+            </div>
+        </div>
+
+        <div id="footerContainer">
+            <div>
+                <a className="footerLink" target="_blank" rel="noreferrer" href="https://github.com/apc518/pitchr" title="Pitchr GitHub">GitHub</a>
+            </div>
+            <div>
+                Copyright &copy; 2024 <a className="footerLink" target="_blank" rel="noreferrer" href="https://chambercode.com/about/andy" title="ChamberCode Portfolio">Andy Chamberlain</a></div>
+            </div>
+        </div>
+
+        <script src="src/audioSampleOptions.js" defer></script>
+        <script src="src/audioSampleSettingsDisplayer.js" defer></script>
+        <script src="src/htmlHandlers.js" defer></script>
+        <script src="src/main.js" defer></script>
+    </body>
+</html>

@@ -1,0 +1,177 @@
+html{
+    height: 100%;
+}
+
+body{
+    margin: 0px;
+    background-color: #1d1d21;
+    color: #ccc;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    color: #0ff;
+}
+
+a:hover{
+    color:white;
+}
+
+#main{
+    margin: 10px;
+}
+
+.rhythm{
+    max-width: 4rem;
+}
+
+.slider{
+    width: 100%;
+    min-width: 240px;
+}
+
+#globalProgressSlider{
+    min-width: 800px;
+}
+
+#appDrawer{
+    width: fit-content;
+    min-width: 280px;
+    max-width: 340px;
+    margin-right: 1rem;
+}
+
+.settingsSection{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-inline: 0.5rem;
+}
+
+.settingsSummary{
+    font-size: 1.3rem;
+    line-height: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.settingsCategory {
+    margin-bottom: 0.75rem;
+}
+
+#playbackSettings{
+    background-color: #333;
+}
+
+.appDrawerDivider{
+    min-height: 2px;
+    background-color: #111;
+}
+
+#patchSettings{
+    background-color: #2a2a2a;
+}
+
+#globalProgressControlButtons{
+    text-align: center;
+}
+
+.mayDisplayFilename{
+    max-width: 100%;
+}
+
+.settingsCategoryLabel{
+    display: inline-block;
+}
+
+.patchSettingTextInput{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.secondaryLabels{
+    font-size: 0.8rem;
+}
+
+.patchSettingNumericalInput{
+    width: 4rem;
+}
+
+#colorGradientControl{
+    display: block;
+    place-items: center;
+}
+
+#colorGradientUIArrow{
+    place-self: center;
+}
+
+.colorKeyFrameContainer{
+    display: flex;
+    align-items: center;
+}
+
+.colorKeyFrameInput{
+    width: 2.5rem;
+}
+
+.colorKeyFrameLabel{
+    margin-left: 5px;
+}
+
+#strokeWeightSliderResetBtn{
+    margin-top: 0.5rem;
+}
+
+#footerContainer{
+    margin-top: auto;
+    margin-inline: 10px;
+    padding-bottom: 0.5rem;
+    overflow-y: hidden;
+}
+
+.playback-control-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 36px;
+    box-sizing: border-box;
+}
+
+#playpausebtn {
+    margin-right: 10px;
+}
+
+#resetbtn {
+    margin-right: 10px;
+}
+
+.sound-control {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+#volumeSliderContainer{
+    margin-left: auto;
+    display: flex;
+}
+
+#volumeSliderLabel{
+    margin-right: 5px;
+}
+
+.no-border {
+    border: 0;
+}
+
+.session-card {
+    min-height: 3em;
+    text-align: center;
+    place-content: center;
+    min-width: max-content;
+    border: 2px solid #f55
+}
