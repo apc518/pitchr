@@ -76,9 +76,9 @@ function play(){
 }
 
 function storeResult(numberAnswered, actualNote){
-    let historyObj = localStorage.pitchrHistory ? JSON.parse(localStorage.pitchrHistory) : [];
-    historyObj.push({ date: Date.now(), guess: numberAnswered, answer: actualNote });
-    localStorage.pitchrHistory = JSON.stringify(historyObj);
+    let sessionList = JSON.parse(localStorage.pitchrSessions);
+    sessionList[sessionContainer.getSelectedIndex()].history.push({ date: Date.now(), guess: numberAnswered, answer: actualNote });
+    localStorage.pitchrSessions = JSON.stringify(sessionList);
 }
 
 function checkAnswer(answer){
@@ -95,7 +95,6 @@ function checkAnswer(answer){
             Swal.fire({
                 title: `Correct!`,
                 imageUrl: "assets/images/jacob-yes.png",
-                icon: "none",
                 showCancelButton: false,
                 timer: autoplayCheckbox.checked ? 1500 : null
             });
@@ -104,7 +103,6 @@ function checkAnswer(answer){
             Swal.fire({
                 title: `Wrong. It was ${numToNote[noteValue % 12]}`,
                 imageUrl: "assets/images/jacob-no.png",
-                icon: "none",
                 showCancelButton: false,
                 timer: autoplayCheckbox.checked ? 1500 : null
             })
@@ -121,8 +119,13 @@ function checkAnswer(answer){
     }
 }
 
+function populateSaveCards(){
+
+}
+
 function main(){
     displayAudioSampleSettings();
+    populateSaveCards();
     initSound();
     Howler.volume(convertSliderValueToAmplitude(50));
     newChallenge();

@@ -175,3 +175,9 @@ a:hover{
     min-width: max-content;
     border: 2px solid #f55
 }
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
