@@ -94,10 +94,8 @@ function checkAnswer(answer){
         if (numberOfAnswer === (noteValue % 12)) {
             Swal.fire({
                 title: `Correct!`,
-                iconHtml: "<image src=\"assets/images/jacob-yes.png\"/>",
-                customClass: {
-                    icon: 'no-border'
-                },
+                imageUrl: "assets/images/jacob-yes.png",
+                icon: "none",
                 showCancelButton: false,
                 timer: autoplayCheckbox.checked ? 1500 : null
             });
@@ -105,10 +103,8 @@ function checkAnswer(answer){
         else{
             Swal.fire({
                 title: `Wrong. It was ${numToNote[noteValue % 12]}`,
-                iconHtml: "<image src=\"assets/images/jacob-no.png\"/>",
-                customClass: {
-                    icon: 'no-border'
-                },
+                imageUrl: "assets/images/jacob-no.png",
+                icon: "none",
                 showCancelButton: false,
                 timer: autoplayCheckbox.checked ? 1500 : null
             })
