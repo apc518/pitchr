@@ -26,6 +26,7 @@ let hasAnsweredCurrentChallenge = false;
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 function scramble(){
+    let snd1 = new Sound(audioSampleFilename, audioFileExtension, 1);
     let snd2 = new Sound(audioSampleFilename, audioFileExtension, 1);
     let snd3 = new Sound(audioSampleFilename, audioFileExtension, 1);
 
@@ -35,13 +36,13 @@ function scramble(){
             return;
         }
 
-        snd.setRate(1 * Math.pow(2,  (Math.floor(Math.random() * 48) + 0.5) / 12));
+        snd1.setRate(1 * Math.pow(2,  (Math.floor(Math.random() * 48) + 0.5) / 12));
         snd2.setRate(1 * Math.pow(2, (Math.floor(Math.random() * 48) + 0.5) / 12));
         snd3.setRate(1 * Math.pow(2, (Math.floor(Math.random() * 48) + 0.5) / 12));
-        snd.snd.stereo(Math.random() * 2 - 1);
+        snd1.snd.stereo(Math.random() * 2 - 1);
         snd2.snd.stereo(Math.random() * 2 - 1);
         snd3.snd.stereo(Math.random() * 2 - 1);
-        snd.play(duration);
+        snd1.play(duration);
         if (Math.random() < 0.75)
             snd2.play(duration);
         if (Math.random() < 0.5)
