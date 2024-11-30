@@ -83,6 +83,9 @@ function storeResult(numberAnswered, actualNote){
 }
 
 function checkAnswer(answer){
+    if (answer.length === 1){
+        answer = answer.toUpperCase();
+    }
     if (!Object.keys(noteToNum).includes(answer)){
         return;
     }

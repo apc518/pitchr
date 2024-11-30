@@ -151,7 +151,9 @@ scrambleButton.onclick = () => {
 
 const answerInput = document.getElementById("answerInput");
 answerInput.oninput = () => {
-    if (Object.keys(noteToNum).includes(answerInput.value) || answerInput.value === ''){
+    if (Object.keys(noteToNum).includes(answerInput.value)
+        || (answerInput.value.length === 1 && Object.keys(noteToNum).includes(answerInput.value.toUpperCase()))
+        || answerInput.value === ''){
         answerInput.style.background = "#fff";
     }
     else {
