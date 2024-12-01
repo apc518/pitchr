@@ -7,11 +7,28 @@ if (!localStorage.pitchrSessions || localStorage.pitchrSessions == ""){
     }]);
 }
 
-function addSessionCard(name){
+function setSessionCardsInnerHTML(){
+    let sessions = JSON.parse(localStorage.pitchrSessions);
+    for (let i = 0; i < sessions.length; i++){
+        let numCorrect = getCorrectCount(sessions[i].history);
+        let numTotal = sessions[i].history.length;
+        let name = sessions[i].name;
+        sessionContainer.children[i].innerHTML = (numTotal > 0 && (typeof numCorrect === "number")) ? `${name}<br/>${numCorrect}/${numTotal} (${Math.floor(100 * numCorrect / numTotal)}%)` : name;
+    }
+}
+
+function addSessionCard(name, numCorrect, numTotal){
     let child = document.createElement("div");
-    child.innerText = name;
     child.className = "session-card prevent-select";
     sessionContainer.appendChild(child);
+}
+
+function getCorrectCount(history) {
+    correct = 0;
+    for (let item of history){
+        correct += item.guess === item.answer
+    }
+    return correct;
 }
 
 function populateSessionCards(){
@@ -23,6 +40,7 @@ function populateSessionCards(){
 populateSessionCards();
 sessionContainer.children[0].selected = true;
 displaySessionSelection();
+setSessionCardsInnerHTML();
 
 sessionContainer.getSelectedIndex = () => {
     for(let i = 0; i < sessionContainer.children.length; i++){

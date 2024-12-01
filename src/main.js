@@ -113,6 +113,8 @@ function checkAnswer(answer){
         }
     }
 
+    setSessionCardsInnerHTML();
+
     hasAnsweredCurrentChallenge = true;
 
     if (autoplayCheckbox.checked) {
